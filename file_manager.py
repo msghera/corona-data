@@ -3,10 +3,10 @@ import os
 
 class FileManager:
     def __init__(self):
-        self.foldername = str(datetime.now().timestamp()).replace('.', '')
+        self.foldername = str(datetime.now().timestamp()).split('.')[0]
         self.BASE_DIR = os.getcwd()
-        self.BASE_DATA_DIR = "{}//data".format(self.BASE_DIR)
-        self.BASE_FOLDER_DIR = "{}//data//{}".format(self.BASE_DIR, self.foldername)
+        self.BASE_DATA_DIR = "{}/data".format(self.BASE_DIR)
+        self.BASE_FOLDER_DIR = "{}/data/{}".format(self.BASE_DIR, self.foldername)
 
         self.create_folder()
 
@@ -27,13 +27,8 @@ class FileManager:
         except OSError:
             print("Failed to create folder. Check permission for user.")
         else:
-            print("Folder is created successfully. Path is {}".format(self.BASE_FOLDER_DIR))
+            print("Timestamp folder is created successfully. Path is {}".format(self.BASE_FOLDER_DIR))
 
 
-
-def test():
-    fm = FileManager()
-
-
-if __name__ == '__main__':
-    test()
+    def get_folder_dir(self):
+        return self.BASE_FOLDER_DIR

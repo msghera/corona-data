@@ -7,7 +7,7 @@ class Fetcher:
 
     def statistics(self):
         stat = self.rh.get_statistics()
-        stat = {stat[i] : [stat[i]] for i in stat.keys()}
+        stat = {i : [stat[i]] for i in stat.keys()}
         return pd.DataFrame(stat)
         
     def coutries_data(self):

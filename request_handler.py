@@ -36,14 +36,3 @@ class RequestHandler:
 
         return json.loads(response.text)
 
-def test():
-    req = RequestHandler()
-    
-    print(req.get_statistics())
-    print(req.get_countries())
-    print(req.get_country())
-    print(req.get_countries_historical())
-    print(req.get_country_historical())
-
-if __name__ == '__main__':
-    test()
