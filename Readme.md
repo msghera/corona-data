@@ -13,12 +13,24 @@ pip install pandas
 
 ## Running the project 
 
+First clone the project 
+```
+https://github.com/msghera/corona-data.git
+```
+
+Change directory to the folder
+```
+cd corona-data
+```
+
 There are two ways to run the project 
 ```
 [1] python corona_data.py
 [2] python corona_data.py {country_name}
 ```
 running [2] will create two more files than [1] based on country specific data.
+
+You might find the files in the data folder in a folder with the timestamp the script started to run.
 
 ## Authors
 
