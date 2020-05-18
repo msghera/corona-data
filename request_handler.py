@@ -7,19 +7,19 @@ class RequestHandler:
         self.BASE_URL = "https://corona.lmao.ninja"
 
     def get_statistics(self):
-        url = "{}/{}".format(self.BASE_URL, "all")
+        url = "{}/v2/{}".format(self.BASE_URL, "all")
         response = requests_get(url)
 
         return json.loads(response.text)
 
     def get_countries(self):
-        url = "{}/{}".format(self.BASE_URL, "countries")
+        url = "{}/v2/{}".format(self.BASE_URL, "countries")
         response = requests_get(url)
 
         return json.loads(response.text)
 
     def get_country(self, country="Bangladesh"):
-        url = "{}/{}/{}".format(self.BASE_URL, "countries", country)
+        url = "{}/v2/{}/{}".format(self.BASE_URL, "countries", country)
         response = requests_get(url)
 
         return json.loads(response.text)
